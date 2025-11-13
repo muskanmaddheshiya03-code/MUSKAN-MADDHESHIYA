@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment 7 - Navigation Menu</title>
+    <style>
+        /* Main container */
+        .container {
+            border: 1px solid black;
+            width: 90%;
+            margin: auto;
+        }
+
+        /* Header section */
+        .header {
+            background-color: lightgray;
+            text-align: center;
+            padding: 10px;
+            font-family: Arial;
+        }
+
+        .header span {
+            color: red;
+        }
+
+        /* Navigation menu links */
+        .nav {
+            margin: 10px;
+        }
+
+        .nav a {
+            display: inline-block;
+            background-color: lightblue;
+            color: blue;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin: 5px;
+            border: 1px solid gray;
+        }
+
+        /* Secondary menu */
+        .sub-nav a {
+            display: inline-block;
+            background-color: lightgreen;
+            color: darkblue;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin: 5px;
+            border: 1px solid gray;
+        }
+
+        /* Float example */
+        .float-left {
+            float: left;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Output</h2>
+    <div class="container">
+        <div class="header">
+            My <span>Website</span> Navigation
+        </div>
+
+        <div class="nav">
+            <a href="#" class="float-left">Home</a>
+            <a href="#" class="float-left">About</a>
+            <a href="#" class="float-left">Services</a>
+            <a href="#" class="float-left">Contact</a>
+            <div class="clear"></div>
+        </div>
+
+        <div class="sub-nav">
+            <a href="#">Dashboard</a>
+            <a href="#">Profile</a>
+            <a href="#">Messages</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
