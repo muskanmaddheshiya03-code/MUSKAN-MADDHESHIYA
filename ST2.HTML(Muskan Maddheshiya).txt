@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document by Muskan Maddheshiya</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>College Timetable - CSE Department</h1>
+
+    <table align="center" border="2">
+        <tr>
+            <th>Day</th>
+            <th>Period 1</th>
+            <th>Period 2</th>
+            <th>Period 3</th>
+            <th>Period 4</th>
+            <th>Lunch</th>
+            <th>Period 5</th>
+            <th>Period 6</th>
+            <th>Period 7</th>
+        </tr>
+
+        <tr>
+            <td>Monday</td>
+            <td>AI</td>
+            <td>E. Physics</td>
+            <td colspan="2">Web Designing</td>
+            <td rowspan="5">Lunch</td>
+            <td>Maths</td>
+            <td>A. Physics</td>
+            <td>E&S</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>Physics</td>
+            <td colspan="2">Math</td>
+            <td>E&S</td>
+            <td>Physics</td>
+            <td>Web Designing</td>
+            <td>AI</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td>AI</td>
+            <td>E. Physics</td>
+            <td colspan="2">Maths</td>
+            <td>Physics</td>
+            <td>CAD Lab</td>
+            <td>Mentor Mentee</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td>Maths</td>
+            <td colspan="2">Physics</td>
+            <td>E&S</td>
+            <td>DSA</td>
+            <td>Maths</td>
+            <td>AI</td>
+        </tr>
+
+        <tr>
+            <td>Friday</td>
+            <td>DSA</td>
+            <td>E. Physics</td>
+            <td>A. Physics</td>
+            <td>E&S</td>
+            <td colspan="2">CAD Lab</td>
+            <td>Web Designing</td>
+        </tr>
+    </table>
+
+</body>
+</html>
