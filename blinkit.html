@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY VERSE – A Personal Website</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body{
+            background:#f5f7fa;
+            color:#333;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 50px;
+            background:#1e272e;
+        }
+
+        .logo{
+            color:#00cec9;
+            font-size:26px;
+            font-weight:bold;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+        }
+
+        nav ul li{
+            margin-left:20px;
+        }
+
+        nav ul li a{
+            text-decoration:none;
+            color:white;
+            font-weight:500;
+        }
+
+        nav ul li a:hover{
+            color:#00cec9;
+        }
+
+        .hero{
+            height:80vh;
+            background:linear-gradient(to right, #0984e3, #00cec9);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero h1{
+            font-size:42px;
+        }
+
+        .hero p{
+            margin:15px 0;
+            font-size:18px;
+        }
+
+        .btn{
+            background:white;
+            color:#0984e3;
+            padding:10px 25px;
+            border-radius:25px;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#dfe6e9;
+        }
+
+        section{
+            padding:60px 20px;
+            text-align:center;
+        }
+
+        section h2{
+            margin-bottom:20px;
+            color:#0984e3;
+        }
+
+        .skills span{
+            display:inline-block;
+            background:#0984e3;
+            color:white;
+            padding:10px 20px;
+            margin:10px;
+            border-radius:20px;
+        }
+
+        .contact-form{
+            max-width:400px;
+            margin:auto;
+            display:flex;
+            flex-direction:column;
+        }
+
+        .contact-form input,
+        .contact-form textarea{
+            margin:10px 0;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        .contact-form button{
+            background:#0984e3;
+            color:white;
+            border:none;
+            padding:10px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        .contact-form button:hover{
+            background:#0652dd;
+        }
+
+        footer{
+            background:#1e272e;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">MY VERSE</div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Welcome to My Verse</h1>
+    <p>A personal website made using HTML & CSS</p>
+    <a href="#contact" class="btn">Contact Me</a>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am a student learning web development. This website shows my skills and creativity using HTML and CSS.</p>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>Web Design</span>
+        <span>Responsive Layout</span>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 MY VERSE | HTML & CSS Project</p>
+</footer>
+
+</body>
+</html>
