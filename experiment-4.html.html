@@ -1,59 +1,63 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Hotel Room Booking Form</title> 
-</head> 
-<body> 
-<h1 align="center">Hotel Room Booking Form</h1> 
-<form action="#" method="post" align="center"> 
-<!-- Name --> 
-<label for="fullname">Full Name:</label> 
-<input type="text" id="fullname" name="fullname" required> 
-<br><br> 
-<!-- Email --> 
-<label for="email">Email:</label> 
-<input type="email" id="email" name="email" required>
-   <br><br> 
- 
-        <!-- Phone --> 
-        <label for="phone">Phone:</label> 
-        <input type="tel" id="phone" name="phone" required> 
-        <br><br> 
- 
-        <!-- Check-in & Check-out --> 
-        <label for="checkin">Check-in Date:</label> 
-        <input type="date" id="checkin" name="checkin"> 
-        <br><br> 
- 
-        <label for="checkout">Check-out Date:</label> 
-        <input type="date" id="checkout" name="checkout"> 
-        <br><br> 
- 
-        <!-- Room Type --> 
-        <label for="room">Room Type:</label> 
-        <select id="room" name="room"> 
-            <option value="single">Single Room</option> 
-            <option value="double">Double Room</option> 
-            <option value="deluxe">Deluxe Room</option> 
-            <option value="suite">Suite</option> 
-        </select> 
-        <br><br> 
- 
-        <!-- Number of Guests --> 
-        <label for="guests">Number of Guests:</label> 
-        <input type="number" id="guests" name="guests" min="1" max="10"> 
-        <br><br> 
- 
-        <!-- Special Requests --> 
-        <label for="requests">Special Requests:</label><br> 
-        <textarea id="requests" name="requests" rows="4" cols="40"></textarea> 
-        <br><br> 
- 
-        <!-- Buttons --> 
-        <input type="submit" value="Book Now"> 
-        <input type="reset" value="Reset Form"> 
- 
-    </form> 
- 
-</body> 
+<html>
+<head>
+    <title>FORM</title>
+    <style>
+        fieldset {
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 35%;
+            margin-left: 35%;
+            margin-right: 35%;
+            border-top: 8px solid black;
+            border-bottom: 3px solid black;
+            border-left: 2px solid black;
+            border-right: 2px solid black;
+        }
+
+        fieldset label {
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="./lol.html" name="rj" target="_blank" >
+        <fieldset>
+            <h1>Hotel Room Booking Form</h1>
+            <label for="name"> Full Name:</label>
+            <input type="text" id=" full name" name="full name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <br><br>
+            <label for=" date">Check-in-Date:</label>
+            <input type="date" name="check in date" name="check in date " required>
+            <br><br>
+            <label for="date">Check-out-Date:</label>
+            <input type="date" name="check out date" id="check out date" required>
+            <br><br>
+            <label for="Sel">Room Type:</label>
+            <Select name="sel" id="select">
+                <option value="Single Room">Single Room</option>
+                <option value="Double  Room">Double Room</option>
+            </Select>
+            <br><br>
+            <label for="number">Number of Guests:</label>
+            <input type="number" id="number" name="number" required>
+            <br><br>
+            <label for="text">Special Requests:</label>
+            <br>
+            <textarea id="text" name="text" rows="5" cols="50">
+            </textarea>
+            <br><br>
+            <button>Book Now</button>
+            <input type="Reset">
+</fieldset>
+    </form>
+</body>
 </html>

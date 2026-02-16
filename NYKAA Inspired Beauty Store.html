@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYKAA Inspired Beauty Store | Web Designing Sem-1 Project</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fff5f8;
+}
+
+/* HEADER */
+header{
+    background:#e80071;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+header h1{
+    font-size:28px;
+    letter-spacing:2px;
+}
+
+nav{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+nav a{
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
+    font-weight:bold;
+    padding:5px 0;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: #ffb3d9;
+}
+
+/* BANNER */
+.banner{
+    background:linear-gradient(to right,#ff5f9e,#ffb3d9);
+    padding:50px 20px;
+    text-align:center;
+    color:white;
+}
+
+.banner h2{
+    font-size:36px;
+    margin-bottom:10px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+.banner p{
+    font-size:18px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* PRODUCTS SLIDER */
+.products{
+    padding:40px 20px;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#e80071;
+}
+
+/* Slider Container */
+.slider-container{
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Slider Track */
+.slider{
+    display: flex;
+    gap:15px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Product Card */
+.card{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+    min-width:220px;
+    flex-shrink:0;
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h3{
+    margin:10px 0;
+    font-size:18px;
+}
+
+.price{
+    color:#e80071;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.card button{
+    margin-top:10px;
+    padding:10px 20px;
+    border:none;
+    background:#e80071;
+    color:white;
+    font-size:14px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#c60060;
+}
+
+/* Slider Buttons */
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background:#e80071;
+    color:white;
+    border:none;
+    padding:10px;
+    cursor:pointer;
+    border-radius:50%;
+    font-size:18px;
+    z-index: 10;
+}
+
+.prev:hover, .next:hover{
+    background:#c60060;
+}
+
+.prev{
+    left: 10px;
+}
+
+.next{
+    right: 10px;
+}
+
+/* FOOTER */
+footer{
+    background:#2c2c2c;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+footer .socials a{
+    color:white;
+    text-decoration:none;
+    margin: 0 5px;
+}
+footer .socials a:hover{
+    color:#e80071;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width:768px){
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav{
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .banner h2{
+        font-size:28px;
+    }
+
+    .banner p{
+        font-size:16px;
+    }
+
+    .products{
+        padding:30px 10px;
+    }
+
+    .card img{
+        height:180px;
+    }
+}
+
+@media(max-width:480px){
+    header h1{
+        font-size:24px;
+        text-align:center;
+        width: 100%;
+    }
+
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a{
+        margin:5px 0;
+    }
+
+    .banner h2{
+        font-size:22px;
+    }
+
+    .banner p{
+        font-size:14px;
+    }
+
+    .card img{
+        height:150px;
+    }
+
+    .card h3{
+        font-size:16px;
+    }
+
+    .price{
+        font-size:16px;
+    }
+
+    .card button{
+        padding:8px 15px;
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>NYKAA Inspired Beauty Store</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Makeup</a>
+        <a href="#">Skin</a>
+        <a href="#">Hair</a>
+        <a href="#">Offers</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <h2>Beauty That Inspires You</h2>
+    <p>Best Makeup & Skincare Products</p>
+</section>
+
+<section class="products">
+    <h2>Top Selling Products</h2>
+
+    <!-- Slider -->
+    <div class="slider-container">
+        <button class="prev">&#10094;</button>
+        <div class="slider">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="">
+                <h3>Lipstick</h3>
+                <p class="price">₹599</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1589987607627-616cac03c93b" alt="">
+                <h3>Foundation</h3>
+                <p class="price">₹899</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519" alt="">
+                <h3>Face Serum</h3>
+                <p class="price">₹749</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348" alt="">
+                <h3>Eyeshadow Palette</h3>
+                <p class="price">₹1299</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <button class="next">&#10095;</button>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 NYKAA Inspired Beauty Store | Web Designing Sem-1 Project</p>
+    <div class="socials">
+        <a href="#">Instagram</a> | 
+        <a href="#">Facebook</a> | 
+        <a href="#">Twitter</a>
+    </div>
+</footer>
+
+<!-- Slider JS -->
+<script>
+const slider = document.querySelector('.slider');
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+
+next.addEventListener('click', () => {
+    slider.scrollBy({ left: 240, behavior: 'smooth' });
+});
+
+prev.addEventListener('click', () => {
+    slider.scrollBy({ left: -240, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

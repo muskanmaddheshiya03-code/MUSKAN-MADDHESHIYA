@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nykaa Clone</title>
+  <style>
+    :root {
+      --brand: #e91e63;
+      --text: #222;
+      --muted: #666;
+      --bg: #fff;
+      --card: #fff;
+      --border: #eee;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--brand);
+      font-size: 1.25rem;
+    }
+    .search {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .search input {
+      width: min(560px, 100%);
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      outline: none;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+    }
+    .icon-btn {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 0.5rem 0.75rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    nav {
+      border-top: 1px solid var(--border);
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    .nav-links {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .nav-links a.active,
+    .nav-links a:hover { color: var(--brand); }
+
+    /* Hero banner */
+    .hero {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #ffe6ef, #fff);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h2 { margin: 0; font-size: 1.75rem; }
+    .hero p { margin: 0.5rem 0 1rem; color: var(--muted); }
+    .cta {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    /* Main product grid */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 2.5rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    /* Responsive columns using CSS Grid */
+    .products {
+      grid-column: 1 / -1;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    /* Product card */
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #fafafa;
+    }
+    .card-body {
+      padding: 0.75rem;
+      display: grid;
+      gap: 0.25rem;
+    }
+    .title { font-weight: 700; font-size: 0.95rem; }
+    .brand-text { color: var(--muted); font-size: 0.85rem; }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .price { color: var(--brand); font-weight: 800; }
+    .mrp { color: var(--muted); text-decoration: line-through; font-size: 0.85rem; }
+    .card-footer {
+      padding: 0.75rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .rating { font-size: 0.85rem; color: #2f7a2f; font-weight: 700; }
+    .buy {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .buy:hover { filter: brightness(0.95); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 1rem;
+      text-align: center;
+      color: var(--muted);
+      background: #fff;
+    }
+
+    /* Fine-tuning responsiveness */
+    @media (min-width: 768px) {
+      .hero { padding: 3rem 1rem; }
+      .hero h2 { font-size: 2rem; }
+      .products { gap: 1.25rem; }
+    }
+    @media (min-width: 1024px) {
+      .topbar { padding: 1rem; }
+      .nav-links { padding: 0.9rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">NYKAA</div>
+      <div class="search">
+        <input type="text" placeholder="Search for makeup, skincare, haircare..." aria-label="Search" />
+      </div>
+      <div class="actions">
+        <button class="icon-btn">Login</button>
+        <button class="icon-btn">Cart</button>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-links">
+        <a href="#" class="active">Home</a>
+        <a href="#">Makeup</a>
+        <a href="#">Skincare</a>
+        <a href="#">Hair</a>
+        <a href="#">Fragrance</a>
+        <a href="#">Bath & Body</a>
+        <a href="#">Men</a>
+        <a href="#">Offers</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Beauty bestsellers, curated for you</h2>
+    <p>Discover trending picks across makeup, skincare, haircare and more.</p>
+    <button class="cta">Shop now</button>
+  </section>
+
+  <main>
+    <div class="grid">
+      <section class="products">
+        <!-- Product card 1 -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x400.png?text=Lipstick" alt="Matte Lipstick" />
+          <div class="card-body">
+            <div class="title">Matte Lipstick</div>
+            <div class="brand-text">NyK Pro • 4 shades</div>
+            <div class="price-row">
+              <div class="price">₹499</div>
+              <div class="mrp">₹799</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="rating">★ 4.3</div>
+            <button class="buy">Buy now</button>
+          </div>
+        </article>
+
+        <!-- Product card 2 -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x400.png?text=Serum" alt="Vitamin C Serum" />
+          <div class="card-body">
+            <div class="title">Vitamin C Serum 10%</div>
+            <div class="brand-text">GlowLab • 30ml</div>
+            <div class="price-row">
+              <div class="price">₹899</div>
+              <div class="mrp">₹1,199</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="rating">★ 4.5</div>
+            <button class="buy">Buy now</button>
+          </div>
+        </article>
+
+        <!-- Product card 3 -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x400.png?text=Shampoo" alt="Keratin Shampoo" />
+          <div class="card-body">
+            <div class="title">Keratin Repair Shampoo</div>
+            <div class="brand-text">HairFix • 250ml</div>
+            <div class="price-row">
+              <div class="price">₹349</div>
+              <div class="mrp">₹499</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="rating">★ 4.1</div>
+            <button class="buy">Buy now</button>
+          </div>
+        </article>
+
+        <!-- Product card 4 -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x400.png?text=Perfume" alt="Eau De Parfum" />
+          <div class="card-body">
+            <div class="title">Eau De Parfum – Noir</div>
+            <div class="brand-text">Scentory • 50ml</div>
+            <div class="price-row">
+              <div class="price">₹1,599</div>
+              <div class="mrp">₹1,999</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="rating">★ 4.6</div>
+            <button class="buy">Buy now</button>
+          </div>
+        </article>
+
+        <!-- Product card 5 -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x400.png?text=Moisturizer" alt="Gel Moisturizer" />
+          <div class="card-body">
+            <div class="title">Hydrating Gel Moisturizer</div>
+            <div class="brand-text">SkinNest • 50g</div>
+            <div class="price-row">
+              <div class="price">₹599</div>
+              <div class="mrp">₹799</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="rating">★ 4.4</div>
+            <button class="buy">Buy now</button>
+          </div>
+        </article>
+
+        <!-- Product card 6 -->
+        <article class="card">
+          <img src="https://via.placeholder.com/400x400.png?text=Palette" alt="Eyeshadow Palette" />
+          <div class="card-body">
+            <div class="title">Eyeshadow Palette – Nude</div>
+            <div class="brand-text">Shade & Co • 12 pans</div>
+            <div class="price-row">
+              <div class="price">₹1,099</div>
+              <div class="mrp">₹1,499</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="rating">★ 4.2</div>
+            <button class="buy">Buy now</button>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Nykaa Clone. All rights reserved.
+  </footer>
+</body>
+</html>
